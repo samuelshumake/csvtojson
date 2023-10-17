@@ -11,6 +11,7 @@ def main():
     print("  2. Remove ALL commas from cells")
     print("  3. Remove thousands-separator from numbers (e.g. 42,000 -> 42000)")
     print("  4. Make sure category columns have text in every cell")
+    print("  5. If JSON is broken at the end, try selecting all empty cells and deleting them")
     print("-" * 25)
     
     fileName = ""
@@ -49,6 +50,10 @@ def main():
         writer.write("{\n")
         tab = "  "
         category = []
+
+        # Add comment into JSON to find where this code lives
+        writer.write(tab + "\"_convertedBy\": \"https://github.com/samuelshumake/csvtojson\",\n")
+
         for i in range(1, len(readerList)):
             for j in range(len(readerList[i])):
                 # If category column and not already printed
