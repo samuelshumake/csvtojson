@@ -3,16 +3,6 @@ from os.path import exists
 import sys
 
 def main():
-
-    print("-" * 25)
-    print("RULES".center(25))
-    print("-" * 25)
-    print("  1. File must be CSV format, delimited by commas")
-    print("  2. Remove ALL commas from cells")
-    print("  3. Remove thousands-separator from numbers (e.g. 42,000 -> 42000)")
-    print("  4. Make sure category columns have text in every cell")
-    print("  5. If JSON is broken at the end, try selecting all empty cells and deleting them")
-    print("-" * 25)
     
     fileName = ""
     # Use filename given in CLI, otherwise ask user
